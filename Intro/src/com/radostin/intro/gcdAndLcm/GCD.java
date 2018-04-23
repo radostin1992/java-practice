@@ -53,10 +53,10 @@ public class GCD {
 			System.out.println("The two numbers are zeros, so GCD = 0.");
 			return false;
 		} else if (num1 > 0 && num2 == 0) {
-			System.out.println("Number b is zero, so GCD is a = " + num1);
+			System.out.println("Number b is zero, so GCD is num1 = " + num1);
 			return false;
 		} else if (num1 == 0 && num2 > 0) {
-			System.out.println("Number a is zero so GCD is b = " + num2);
+			System.out.println("Number a is zero so GCD is num2 = " + num2);
 			return false;
 		} else if (num1 < 0 || num2 < 0) {
 			System.out.println(
