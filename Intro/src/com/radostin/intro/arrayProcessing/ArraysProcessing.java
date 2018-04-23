@@ -3,8 +3,6 @@
  */
 package com.radostin.intro.arrayProcessing;
 
-import java.util.Arrays;
-
 /**
  * @author Rado
  *
@@ -61,33 +59,59 @@ public class ArraysProcessing {
 	}
 
 	public static int findMedian(int[] array) {
-		int L = 0;
-		int R = array.length - 1;
-		int median =0;
+		int leftIndex = 0;
+		int rightIndex = array.length - 1;
+		int median = 0;
 
 		int sumL = array[0];
-		int sumR = array[array.length -1];
+		int sumR = array[array.length - 1];
 
 		for (int i = 1; i < array.length; i++) {
-			if (L != R - 1) {
+			if (leftIndex != rightIndex - 1) {
 				if (sumL > sumR) {
-					R--;
-					sumR = sumR + array[R];
+					rightIndex--;
+					sumR = sumR + array[rightIndex];
 				} else {
-					L++;
-					sumL = sumL + array[L];
+					leftIndex++;
+					sumL = sumL + array[leftIndex];
 				}
 			} else {
 				if (sumL < sumR) {
-					median = R + 1;
+					median = rightIndex + 1;
 				} else
-					median = L + 1;
+					median = leftIndex + 1;
 				return median;
 			}
 		}
 		return median;
 	}
-	
+
+	public static void quickSort(int[] array, int low, int high) {
+		if (low < high) {
+			int pi = partition(array, low, high);
+			quickSort(array, low, pi - 1);
+			quickSort(array, pi + 1, high);
+		}
+	}
+
+	static int partition(int array[], int low, int high) {
+		int pivot = array[high];
+		int i = (low - 1);
+		for (int j = low; j < high; j++) {
+			if (array[j] <= pivot) {
+				i++;
+				int temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+		int temp = array[i + 1];
+		array[i + 1] = array[high];
+		array[high] = temp;
+
+		return i + 1;
+	}
+
 	public static int[] reverse(int[] array) {
 		int temp = 0;
 		for (int i = 0; i < array.length / 2; i++) {
@@ -97,5 +121,4 @@ public class ArraysProcessing {
 		}
 		return array;
 	}
-
 }

@@ -33,11 +33,27 @@ public class Runner {
 		System.out.println("The largest sum of contiguous subarray is: " + largestSumOfContiguousSubarray);
 
 		System.out.println("====================================");
-		int[] medianTestArr = {4,5,99,-1,5,6};
+		int[] medianTestArr = { 4, 5, 99, -1, 5, 6 };
 		System.out.print("New array >>> ");
 		ArraysProcessing.print(medianTestArr);
+
 		int median = ArraysProcessing.findMedian(medianTestArr);
 		System.out.println("The median of the array is at index: " + median + " (index starts from 1)");
+
+		System.out.println("====================================");
+		int[] quickSortTestArr = { 10, 80, 30, 90, 40, 50, 70 };
+		System.out.print("New array >>> ");
+		ArraysProcessing.print(quickSortTestArr);
+
+		int arrayLength = quickSortTestArr.length;
+		ArraysProcessing.quickSort(quickSortTestArr, 0, arrayLength - 1);
+		System.out.print("Sorted array: ");
+		ArraysProcessing.print(quickSortTestArr);
+
+		System.out.println("====================================");
+		ArraysProcessing.reverse(quickSortTestArr);
+		System.out.print("Reversed array: ");
+		ArraysProcessing.print(quickSortTestArr);
 
 	}
 
