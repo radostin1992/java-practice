@@ -11,44 +11,54 @@ public class GCD {
 
 	static boolean negative = false;
 
-	public static int find(int a, int b) {
-		if (check(a, b)) {
+	/**
+	 * Method which finds Greatest common divisor of two integer numbers.
+	 * 
+	 * @param num1
+	 *            is the first given number.
+	 * @param num2
+	 *            is the second given number.
+	 * @return greatest common divisor of the two given numbers.
+	 */
+	public static int find(int num1, int num2) {
+		if (check(num1, num2)) {
 			if (negative) {
-				a = Math.abs(a);
-				b = Math.abs(b);
+				num1 = Math.abs(num1);
+				num2 = Math.abs(num2);
 			}
-			while (a != b) {
-				if (a > b) {
-					a = a - b;
+			while (num1 != num2) {
+				if (num1 > num2) {
+					num1 = num1 - num2;
 				} else {
-					b = b - a;
+					num2 = num2 - num1;
 				}
 			}
-			System.out.println("GCD: " + a);
+			System.out.println("GCD: " + num1);
 		}
-		return a;
+		return num1;
 	}
 
 	/**
 	 * Initial check of the numbers.
 	 * 
-	 * @param a
+	 * @param num1
 	 *            is the first given integer number.
-	 * @param b
+	 * @param num2
 	 *            is the second given integer number.
-	 * @return
+	 * @return true if the two numbers are correct for calculating greatest common
+	 *         divisor.
 	 */
-	public static boolean check(int a, int b) {
-		if (a == 0 && b == 0) {
+	public static boolean check(int num1, int num2) {
+		if (num1 == 0 && num2 == 0) {
 			System.out.println("The two numbers are zeros, so GCD = 0.");
 			return false;
-		} else if (a > 0 && b == 0) {
-			System.out.println("Number b is zero, so GCD is a = " + a);
+		} else if (num1 > 0 && num2 == 0) {
+			System.out.println("Number b is zero, so GCD is a = " + num1);
 			return false;
-		} else if (a == 0 && b > 0) {
-			System.out.println("Number a is zero so GCD is b = " + b);
+		} else if (num1 == 0 && num2 > 0) {
+			System.out.println("Number a is zero so GCD is b = " + num2);
 			return false;
-		} else if (a < 0 || b < 0) {
+		} else if (num1 < 0 || num2 < 0) {
 			System.out.println(
 					"We find negative number/numbers, so we will take the absolute value of the number/numbers.");
 			negative = true;
