@@ -1,14 +1,21 @@
-/**
- * 
- */
+
 package com.radostin.intro.arrayProcessing;
 
 /**
- * @author Rado
+ * Class which have different methods for array processing.
+ * 
+ * @author Radostin Ivanov
  *
  */
 public class ArraysProcessing {
-
+	/**
+	 * Method which finds index of the element with minimum value in the given
+	 * array.
+	 * 
+	 * @param array
+	 *            is the given array with elements.
+	 * @return the index of the element with minimum value.
+	 */
 	public static int getMinElementIndex(int[] array) {
 		int min = array[0];
 		int index = 0;
@@ -21,6 +28,13 @@ public class ArraysProcessing {
 		return index;
 	}
 
+	/**
+	 * Method which sum all the elements values in the given array.
+	 * 
+	 * @param array
+	 *            is the given array with elements.
+	 * @return the sum of the elements in the array.
+	 */
 	public static int sum(int[] array) {
 		int sum = 0;
 		for (int i = 0; i < array.length; i++) {
@@ -29,6 +43,12 @@ public class ArraysProcessing {
 		return sum;
 	}
 
+	/**
+	 * Method which prints all element of the array in console.
+	 * 
+	 * @param array
+	 *            is the given array with elements.
+	 */
 	public static void print(int[] array) {
 		System.out.print("The elements of the array are: ");
 		for (int i = 0; i < array.length; i++) {
@@ -39,6 +59,14 @@ public class ArraysProcessing {
 		}
 	}
 
+	/**
+	 * Method which finds the contiguous subarray with the largest sum and prints
+	 * the sum.
+	 * 
+	 * @param array
+	 *            is the given array with elements.
+	 * @return largest sum of the contiguous subarray.
+	 */
 	public static int largestSumOfContiguousSubarray(int[] array) {
 		int maxSoFar = 0;
 		int maxEndingHere = 0;
@@ -58,6 +86,14 @@ public class ArraysProcessing {
 		return maxSoFar;
 	}
 
+	/**
+	 * Method which finds the median of array. The sum of the elements before and
+	 * after the median is as close as possible.
+	 * 
+	 * @param array
+	 *            is the given array with elements.
+	 * @return the position of the median when we start counting from 1.
+	 */
 	public static int findMedian(int[] array) {
 		int leftIndex = 0;
 		int rightIndex = array.length - 1;
@@ -86,6 +122,16 @@ public class ArraysProcessing {
 		return median;
 	}
 
+	/**
+	 * Method which implements quick sort algorithm.
+	 * 
+	 * @param array
+	 *            is the given array with element to be sorted.
+	 * @param low
+	 *            is the starting index.
+	 * @param high
+	 *            is the ending index.
+	 */
 	public static void quickSort(int[] array, int low, int high) {
 		if (low < high) {
 			int pi = partition(array, low, high);
@@ -94,6 +140,19 @@ public class ArraysProcessing {
 		}
 	}
 
+	/**
+	 * Method which takes last element of the subarray as pivot then places the
+	 * pivot element at its correct position in sorted array and places all smaller
+	 * (than pivot) to left and all greater element to right of pivot.
+	 * 
+	 * @param array
+	 *            is the given subarray from quickSort method.
+	 * @param low
+	 *            is starting index.
+	 * @param high
+	 *            is ending index.
+	 * @return
+	 */
 	static int partition(int array[], int low, int high) {
 		int pivot = array[high];
 		int i = (low - 1);
@@ -112,6 +171,13 @@ public class ArraysProcessing {
 		return i + 1;
 	}
 
+	/**
+	 * Method which reverse the elements of the array.
+	 * 
+	 * @param array
+	 *            is the given array with elements.
+	 * @return reversed array.
+	 */
 	public static int[] reverse(int[] array) {
 		int temp = 0;
 		for (int i = 0; i < array.length / 2; i++) {

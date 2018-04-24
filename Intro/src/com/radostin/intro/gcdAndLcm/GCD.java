@@ -1,4 +1,3 @@
-
 package com.radostin.intro.gcdAndLcm;
 
 /**
@@ -14,51 +13,51 @@ public class GCD {
 	/**
 	 * Method which finds Greatest common divisor of two integer numbers.
 	 * 
-	 * @param num1
+	 * @param firstNumber
 	 *            is the first given number.
-	 * @param num2
+	 * @param secondNumber
 	 *            is the second given number.
 	 * @return greatest common divisor of the two given numbers.
 	 */
-	public static int find(int num1, int num2) {
-		if (check(num1, num2)) {
+	public static int find(int firstNumber, int secondNumber) {
+		if (check(firstNumber, secondNumber)) {
 			if (negative) {
-				num1 = Math.abs(num1);
-				num2 = Math.abs(num2);
+				firstNumber = Math.abs(firstNumber);
+				secondNumber = Math.abs(secondNumber);
 			}
-			while (num1 != num2) {
-				if (num1 > num2) {
-					num1 = num1 - num2;
+			while (firstNumber != secondNumber) {
+				if (firstNumber > secondNumber) {
+					firstNumber = firstNumber - secondNumber;
 				} else {
-					num2 = num2 - num1;
+					secondNumber = secondNumber - firstNumber;
 				}
 			}
-			System.out.println("GCD: " + num1);
+			System.out.println("GCD: " + firstNumber);
 		}
-		return num1;
+		return firstNumber;
 	}
 
 	/**
 	 * Initial check of the numbers.
 	 * 
-	 * @param num1
+	 * @param firstNumber
 	 *            is the first given integer number.
-	 * @param num2
+	 * @param secondNumber
 	 *            is the second given integer number.
 	 * @return true if the two numbers are correct for calculating greatest common
 	 *         divisor.
 	 */
-	public static boolean check(int num1, int num2) {
-		if (num1 == 0 && num2 == 0) {
+	public static boolean check(int firstNumber, int secondNumber) {
+		if (firstNumber == 0 && secondNumber == 0) {
 			System.out.println("The two numbers are zeros, so GCD = 0.");
 			return false;
-		} else if (num1 > 0 && num2 == 0) {
-			System.out.println("Number b is zero, so GCD is num1 = " + num1);
+		} else if (firstNumber > 0 && secondNumber == 0) {
+			System.out.println("Second number is zero, so GCD is firstNumber = " + firstNumber);
 			return false;
-		} else if (num1 == 0 && num2 > 0) {
-			System.out.println("Number a is zero so GCD is num2 = " + num2);
+		} else if (firstNumber == 0 && secondNumber > 0) {
+			System.out.println("First number is zero so GCD is secondNumber = " + secondNumber);
 			return false;
-		} else if (num1 < 0 || num2 < 0) {
+		} else if (firstNumber < 0 || secondNumber < 0) {
 			System.out.println(
 					"We find negative number/numbers, so we will take the absolute value of the number/numbers.");
 			negative = true;

@@ -14,12 +14,12 @@ public class Runner {
 	 */
 	public static void main(String[] args) {
 		// The two given numbers
-		int num1 = 24;
-		int num2 = 54;
+		int firstNumber = 24;
+		int secondNumber = 54;
 
 		// Calculating
-		int gcd = GCD.find(num1, num2);
-		LCM.find(num1, num2, gcd);
+		int gcd = GCD.find(firstNumber, secondNumber);
+		LCM.find(firstNumber, secondNumber, gcd);
 
 	}
 
