@@ -31,7 +31,7 @@ public class SumLargeNums {
 		boolean check = check(firstNum, secondNum);
 
 		if (check != false) {
-			if (firstNum.length() < secondNum.length() || firstNum.length() > secondNum.length()) {
+			if (firstNum.length() != secondNum.length()) {
 				fillWithZeros();
 			}
 			int inMind = 0;
